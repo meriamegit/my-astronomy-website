@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astronomy News</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #0b1a29;
+            color: #fff;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        header {
+            background-color: #112d4e;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            color: #fff;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .news-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 30px;
+            gap: 30px;
+        }
+
+        .news-item {
+            background-color: #1b2735;
+            width: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .news-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .news-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 4px solid #3a86ff;
+        }
+
+        .news-item .content {
+            padding: 20px;
+        }
+
+        .news-item h3 {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+            color: #fff;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .news-item h3:hover {
+            color: #3a86ff;
+        }
+
+        .news-item p {
+            font-size: 1rem;
+            color: #ddd;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .read-more-btn {
+            display: inline-block;
+            background-color: #3a86ff;
+            padding: 10px 20px;
+            color: #fff;
+            text-decoration: none;
+            margin-top: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .read-more-btn:hover {
+            background-color: #265d9b;
+        }
+
+        .hidden-text {
+            display: none;
+            font-size: 1rem;
+            color: #ccc;
+            margin-top: 10px;
+            line-height: 1.5;
+        }
+
+        footer {
+            background-color: #112d4e;
+            text-align: center;
+            padding: 20px;
+            color: #fff;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Astronomy News</h1>
+    </header>
+
+    <div class="news-container">
+        <!-- News Item 1 -->
+        <div class="news-item">
+            <img src="images/hubble.jpg" alt="Hubble Telescope">
+            <div class="content">
+                <h3>Hubble's Latest Discovery</h3>
+                <p>Discover the groundbreaking new findings from the Hubble Space Telescope as it uncovers the mysteries of distant galaxies.</p>
+                <a href="#" class="read-more-btn">Read More</a>
+                <p class="hidden-text">This discovery involves a new understanding of the formation of black holes and how galaxies interact with their surroundings. Hubble's observations are essential in revealing cosmic phenomena that are otherwise invisible to us.</p>
+            </div>
+        </div>
+
+        <!-- News Item 2 -->
+        <div class="news-item">
+            <img src="images/meteor.jpg" alt="Meteor Shower">
+            <div class="content">
+                <h3>Upcoming Meteor Showers</h3>
+                <p>Don't miss out on the most spectacular meteor showers of the year. Find out when and where you can catch the best views.</p>
+                <a href="#" class="read-more-btn">Read More</a>
+                <p class="hidden-text">The Perseid meteor shower is expected to peak in August, offering a chance to see hundreds of meteors streak across the sky in just a few hours. Experts suggest finding a dark, clear spot away from city lights for the best view.</p>
+            </div>
+        </div>
+
+        <!-- News Item 3 -->
+        <div class="news-item">
+            <img src="images/webb.jpg" alt="James Webb Telescope">
+            <div class="content">
+                <h3>James Webb Space Telescope's Deep Space Missions</h3>
+                <p>NASA’s James Webb Telescope is revolutionizing our understanding of deep space with its stunning images of distant stars and galaxies.</p>
+                <a href="#" class="read-more-btn">Read More</a>
+                <p class="hidden-text">The Webb telescope has already captured breathtaking images of distant galaxies, helping scientists learn more about the early universe. With its powerful infrared capabilities, Webb can peer deeper into space than ever before.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 CosmoExplorer. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.read-more-btn').forEach(button => {
+            button.addEventListener('click', function (e) {
+                e.preventDefault();
+                const hiddenText = this.previousElementSibling; // Target the hidden text
+                if (hiddenText.style.display === "none" || hiddenText.style.display === "") {
+                    hiddenText.style.display = "block";
+                    this.textContent = "Read Less";
+                } else {
+                    hiddenText.style.display = "none";
+                    this.textContent = "Read More";
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

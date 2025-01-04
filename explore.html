@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore the Cosmos</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #0b1a29;
+            color: #fff;
+        }
+        header {
+            background-color: #112d4e;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        section {
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .intro {
+            margin-bottom: 30px;
+        }
+        .intro p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        .feature-item {
+            background-color: #1b2735;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        .feature-item img {
+            width: 100%;
+            height: 40vh;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        .feature-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+    
+    .facts {
+        background-color: #112d4e;
+        padding: 40px 20px;
+        color: #fff;
+        text-align: center;
+    }
+    .facts h2 {
+        margin-bottom: 30px;
+        font-size: 2rem;
+    }
+    .facts-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+    }
+    .fact-item {
+        background-color: #1b2735;
+        padding: 20px;
+        border-radius: 10px;
+        width: 300px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        text-align: left;
+    }
+    .fact-item p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin: 0;
+    }
+    .fact-item p strong {
+        color: #ffcc00; /* Highlighted title for each fact */
+    }
+    .hidden-text {
+        display: none;
+        color: #ddd;
+    }
+    .read-more {
+        color: #3a86ff;
+        font-weight: bold;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    .read-more:hover {
+        text-decoration: underline;
+    }
+        
+        footer {
+            background-color: #0a1a28;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+    
+</head>
+<body>
+    <header>
+        <h1>Explore the Wonders of the Cosmos</h1>
+    </header>
+
+    <section class="intro">
+        <p>
+            The universe is vast and filled with mysteries waiting to be uncovered. From galaxies billions of light-years away to the stars and planets in our own Milky Way, there's so much to discover. Let's dive into the beauty of the cosmos!
+        </p>
+    </section>
+
+    <section class="features">
+        <div class="feature-item">
+            <img src="images/galaxy.jpg" alt="Galaxy">
+            <h3>Galaxies</h3>
+            <p>Discover breathtaking galaxies, each a collection of billions of stars, gas, and dust, held together by gravity.</p>
+        </div>
+        <div class="feature-item">
+            <img src="images/star.jpg" alt="Stars">
+            <h3>Stars</h3>
+            <p>Learn about stars, the luminous balls of plasma that light up the night sky and fuel our universe.</p>
+        </div>
+        <div class="feature-item">
+            <img src="images/planet.jpg" alt="Planets">
+            <h3>Planets</h3>
+            <p>Explore planets both in our solar system and in distant star systems beyond the reach of our telescopes.</p>
+        </div>
+    </section>
+
+    <section class="facts">
+        <h2>Fascinating Facts</h2>
+        <div class="facts-grid">
+            <div class="fact-item">
+                <p><strong>Fact 1:</strong> The Milky Way galaxy contains over 100 billion stars. 
+                    <span class="hidden-text">These stars range from massive, short-lived ones to tiny, long-lasting red dwarfs. It's home to our Solar System and spans over 100,000 light-years in diameter!</span>
+                    <a href="#" class="read-more">Read More</a>
+                </p>
+            </div>
+            <div class="fact-item">
+                <p><strong>Fact 2:</strong> There are more stars in the universe than grains of sand on Earth.
+                    <span class="hidden-text">Scientists estimate there are about 10^24 stars in the observable universe, a number so vast it's almost impossible to comprehend!</span>
+                    <a href="#" class="read-more">Read More</a>
+                </p>
+            </div>
+            <div class="fact-item">
+                <p><strong>Fact 3:</strong> Light from the Sun takes about 8 minutes to reach Earth.
+                    <span class="hidden-text">This phenomenon, known as the speed of light, means we always see the Sun as it was 8 minutes ago—not as it is in real-time.</span>
+                    <a href="#" class="read-more">Read More</a>
+                </p>
+            </div>
+            <div class="fact-item">
+                <p><strong>Fact 4:</strong> Black holes are regions of space where gravity is so strong that nothing, not even light, can escape.
+                    <span class="hidden-text">They are formed when massive stars collapse under their own gravity, creating an incredibly dense point called a singularity.</span>
+                    <a href="#" class="read-more">Read More</a>
+                </p>
+            </div>
+        </div>
+    </section>
+    <script>
+        document.querySelectorAll('.read-more').forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                const hiddenText = button.previousElementSibling;
+                if (hiddenText.style.display === "inline") {
+                    hiddenText.style.display = "none";
+                    button.textContent = "Read More";
+                } else {
+                    hiddenText.style.display = "inline";
+                    button.textContent = "Read Less";
+                }
+            });
+        });
+    </script>    
+
+    <footer>
+        <p>&copy; 2024 CosmoExplorer. All rights reserved.</p>
+    </footer>
+</body>
+</html>
